@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 - [x] Buttons or links to a related resources are on each card component
   - [x] All cards have a "View Profile" link that opens the character's Berserk Wiki page in a new tab
 - [x] The site is responsive for both desktop and mobile formats
-  - [x] Web app is shown in a mobile format
+  - [x] Web app is shown in a Desktop format (but I also tested mobile responsiveness)
   - [x] Video Walkthrough
   
 The following **additional** features are implemented:
