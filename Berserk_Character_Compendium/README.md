@@ -33,20 +33,19 @@ The following **additional** features are implemented:
 * [x] Archetype and status badges are displayed over each character portrait with clear contrast
 * [x] A cinematic header image with a fade-to-white transition sits beneath the title
 * [x] The Brand of Sacrifice wiki icon is used as a decorative divider element
-* [x] Overall Griffith-inspired white and blue color scheme
+* [x] Overall white and blue color scheme (as opposed to Black and Red which series is known for UI/UX Improvements)
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+
+https://github.com/user-attachments/assets/8d99af81-db04-4018-92da-9de3186769bd
+
+
+
+
 
 ## Notes
 
@@ -56,15 +55,20 @@ Challenges encountered while building the app:
 - Per-character color theming was achieved using CSS custom properties (`--sym-color`, `--faction-color`, etc.) injected via React inline styles, driving all card colors from the data file without duplicating CSS
 - `transition: all` caused hover animations to break on elements using `color-mix()` background values — switching to explicit property transitions (`transform`, `border-color`, `box-shadow`) fixed it
 
+## Disclaimer 
+All Images were taken from the offical berserk wiki 
+https://berserk.fandom.com/wiki/Berserk_Wiki
+
 ## License
 
-    Copyright 2024 Adam Solomon
+    Copyright 2026 Adam Solomon
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
 
         http://www.apache.org/licenses/LICENSE-2.0
+
 
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
