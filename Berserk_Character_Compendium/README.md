@@ -4,7 +4,7 @@ Submitted by: **Adam Solomon**
 
 This web app: **A character compendium for the manga/anime series Berserk. It displays 12 characters from the series, each with their own themed card showing their portrait, faction, archetype, status, abilities, and a brief description. Cards are color-themed per character and can be selected to highlight them. Each card links to the character's Berserk Wiki page.**
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
