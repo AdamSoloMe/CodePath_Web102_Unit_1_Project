@@ -23,8 +23,8 @@ The following **optional** features are implemented:
   - [x] All cards have a "View Profile" link that opens the character's Berserk Wiki page in a new tab
 - [x] The site is responsive for both desktop and mobile formats
   - [x] Web app is shown in a mobile format
-  - [x] **Video Walkthrough Special Instructions**: To ease the grading process, please use Chrome Developer Tools' "Toggle Device" button to demonstrate that your web application's responsiveness in both a desktop *and* a mobile format.
-
+  - [x] Video Walkthrough
+  
 The following **additional** features are implemented:
 
 * [x] Each character card is individually color-themed to match the character's identity (e.g. Guts = black/red, Griffith = white/blue, Puck = green)
@@ -56,7 +56,7 @@ Challenges encountered while building the app:
 - `transition: all` caused hover animations to break on elements using `color-mix()` background values — switching to explicit property transitions (`transform`, `border-color`, `box-shadow`) fixed it
 
 ## Disclaimer 
-All Images were taken from the offical berserk wiki 
+All Images were taken from the offical berserk wiki I do not own any of them 
 https://berserk.fandom.com/wiki/Berserk_Wiki
 
 ## License
