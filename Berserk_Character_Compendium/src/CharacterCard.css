@@ -1,0 +1,262 @@
+/* ─── Card root ─────────────────────────────────────────────────────────── */
+.bw-card {
+  background: color-mix(in srgb, var(--sym-color) 5%, #ffffff);
+  border: 1.5px solid color-mix(in srgb, var(--sym-color) 28%, #dde6f0);
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+  box-shadow:
+    0 2px 10px color-mix(in srgb, var(--sym-color) 10%, rgba(0,0,0,0.06));
+}
+
+.bw-card:hover {
+  border-color: color-mix(in srgb, var(--sym-color) 65%, transparent);
+  transform: translateY(-6px);
+  box-shadow:
+    0 12px 36px color-mix(in srgb, var(--sym-color) 18%, transparent),
+    0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Selected state — highlighted border + elevated shadow */
+.bw-card--selected {
+  border-color: var(--sym-color);
+  background: color-mix(in srgb, var(--sym-color) 9%, #ffffff);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--sym-color) 22%, transparent),
+    0 12px 36px color-mix(in srgb, var(--sym-color) 20%, transparent),
+    0 2px 10px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+}
+
+/* ─── Banner ────────────────────────────────────────────────────────────── */
+.bw-card__banner {
+  height: 400px;
+  background: linear-gradient(150deg, var(--grad-from) 0%, var(--grad-to) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Faction color accent bar */
+.bw-card__faction-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--faction-color);
+  z-index: 2;
+}
+
+/* Character image */
+.bw-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Placeholder shown when no image is set */
+.bw-card__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(150deg, var(--grad-from) 0%, var(--grad-to) 100%);
+}
+
+.bw-card__placeholder-sym {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 7rem;
+  color: var(--sym-color);
+  opacity: 0.35;
+  user-select: none;
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.bw-card:hover .bw-card__placeholder-sym,
+.bw-card--selected .bw-card__placeholder-sym {
+  opacity: 0.6;
+  transform: scale(1.08);
+}
+
+/* Bottom fade into card body */
+.bw-card__banner-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--sym-color) 5%, #ffffff));
+  z-index: 1;
+}
+
+/* Archetype badge — top left */
+.bw-card__archetype {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  padding: 5px 12px;
+  border: 1.5px solid var(--sym-color);
+  border-radius: 4px;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: color-mix(in srgb, var(--sym-color) 75%, #000000);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+/* Status — top right */
+.bw-card__status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, var(--status-dot) 60%, transparent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.bw-card__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--status-dot);
+  box-shadow: 0 0 8px var(--status-dot);
+  flex-shrink: 0;
+}
+
+/* ─── Body ──────────────────────────────────────────────────────────────── */
+.bw-card__body {
+  padding: 14px 18px 18px;
+}
+
+/* Faction label */
+.bw-card__faction {
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 0.63rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--faction-color);
+  margin: 0 0 5px;
+}
+
+/* Name — always character color, brighter when selected */
+.bw-card__name {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--sym-color) 80%, #1a2030);
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  margin: 0 0 4px;
+  transition: color 0.22s ease;
+}
+
+.bw-card--selected .bw-card__name {
+  color: var(--sym-color);
+}
+
+/* Title / epithet */
+.bw-card__title {
+  font-style: italic;
+  color: color-mix(in srgb, var(--sym-color) 55%, #7a90aa);
+  font-size: 0.82rem;
+  margin: 0 0 11px;
+  font-family: "Crimson Text", Georgia, serif;
+}
+
+/* Divider */
+.bw-card__divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--sym-color) 40%, transparent),
+    transparent
+  );
+  margin-bottom: 11px;
+}
+
+/* Description */
+.bw-card__desc {
+  font-size: 0.875rem;
+  line-height: 1.62;
+  color: #5a6e82;
+  margin: 0 0 13px;
+  font-family: "Crimson Text", Georgia, serif;
+}
+
+/* Ability tags */
+.bw-card__abilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.bw-card__ability {
+  padding: 2px 8px;
+  border: 1px solid color-mix(in srgb, var(--sym-color) 35%, transparent);
+  border-radius: 2px;
+  font-size: 0.67rem;
+  letter-spacing: 0.06em;
+  color: color-mix(in srgb, var(--sym-color) 70%, #4a5a6a);
+  background: color-mix(in srgb, var(--sym-color) 8%, #ffffff);
+}
+
+/* Footer */
+.bw-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #eef2f8;
+  padding-top: 13px;
+}
+
+.bw-card__race {
+  font-size: 0.7rem;
+  color: color-mix(in srgb, var(--faction-color) 70%, #8aa0b8);
+  letter-spacing: 0.1em;
+}
+
+/* View Profile button */
+.bw-card__btn {
+  display: inline-block;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid var(--sym-color);
+  color: var(--sym-color);
+  padding: 5px 14px;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.18s ease;
+}
+
+.bw-card__btn:hover {
+  background: var(--sym-color);
+  color: #ffffff;
+}

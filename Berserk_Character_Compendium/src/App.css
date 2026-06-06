@@ -1,0 +1,136 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap");
+
+/* ─── Reset / globals ───────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* ─── App shell ─────────────────────────────────────────────────────────── */
+.bw-app {
+  min-height: 100vh;
+  background: #f4f7fc;
+  font-family: "Crimson Text", Georgia, serif;
+  color: #1a2a3a;
+  padding-bottom: 70px;
+}
+
+/* ─── Header ────────────────────────────────────────────────────────────── */
+.bw-header {
+  text-align: center;
+  padding: 60px 20px 38px;
+}
+
+.bw-header__scene {
+  display: block;
+  width: min(720px, 92vw);
+  height: 360px;
+  object-fit: cover;
+  object-position: center 30%;
+  margin: 18px auto 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.bw-header__eyebrow {
+  font-family: "Crimson Text", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #7a9cc0;
+  margin-bottom: 14px;
+}
+
+.bw-header__title {
+  font-family: "Cinzel Decorative", serif;
+  font-size: clamp(2.6rem, 9vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  color: #1a5bbf;
+  text-shadow:
+    0 2px 16px rgba(26, 91, 191, 0.25),
+    0 0 48px rgba(26, 91, 191, 0.1);
+  line-height: 1;
+}
+
+/* Decorative divider */
+.bw-header__divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 18px auto;
+  max-width: 380px;
+}
+
+.bw-header__divider-line {
+  flex: 1;
+  height: 1px;
+}
+
+.bw-header__divider-line--left {
+  background: linear-gradient(90deg, transparent, rgba(26, 91, 191, 0.4));
+}
+
+.bw-header__divider-line--right {
+  background: linear-gradient(90deg, rgba(26, 91, 191, 0.4), transparent);
+}
+
+.bw-header__divider-mark {
+  color: #1a5bbf;
+  font-size: 0.85rem;
+}
+
+.bw-header__brand {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+  opacity: 0.9;
+}
+
+.bw-header__quote {
+  font-style: italic;
+  color: #6a8aaa;
+  font-size: clamp(0.8rem, 2vw, 0.92rem);
+  letter-spacing: 0.04em;
+  max-width: 560px;
+  margin: 0 auto 14px;
+}
+
+.bw-header__count {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  color: #9ab0c8;
+  text-transform: uppercase;
+}
+
+/* ─── Character grid ────────────────────────────────────────────────────── */
+.bw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .bw-grid {
+    grid-template-columns: 1fr;
+    padding: 0 14px;
+  }
+}

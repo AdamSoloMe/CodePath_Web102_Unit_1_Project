@@ -1,0 +1,13 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+  <!-- Outer 4-pointed cross with concave sides -->
+  <path d="
+    M 50,2
+    Q 54,46 98,50
+    Q 54,54 50,98
+    Q 46,54  2,50
+    Q 46,46 50,2
+    Z
+  "/>
+  <!-- Small center circle -->
+  <circle cx="50" cy="50" r="5"/>
+</svg>
